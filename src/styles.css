@@ -152,3 +152,8 @@ body {
     .centralizar {
         justify-self: center;
     }
+
+    /* Remove sublinhado de todos os Links com classe btn */
+    a.btn {
+    text-decoration: none;
+  }
