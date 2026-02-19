@@ -40,19 +40,19 @@ export default function EventoDetalhe({ eventos }) {
       <div className="stack" style={{ gap: "1.5rem", maxWidth: "600px", margin: "0 auto" }}>
         {/* Data do evento */}
         <div>
-          <strong>📅 Data:</strong>
+          <strong><span className="material-symbols-outlined">calendar_today</span> Data:</strong>
           <p>{evento.data}</p>
         </div>
         
         {/* Local do evento */}
         <div>
-          <strong>📍 Local:</strong>
+          <strong><span className="material-symbols-outlined">location_on</span> Local:</strong>
           <p>{evento.local}</p>
         </div>
         
         {/* Descrição do evento (com fallback se não houver descrição) */}
         <div>
-          <strong>📝 Descrição:</strong>
+          <strong><span className="material-symbols-outlined">book_2</span> Descrição:</strong>
           <p>{evento.descricao || "Sem descrição disponível."}</p>
         </div>
       </div>

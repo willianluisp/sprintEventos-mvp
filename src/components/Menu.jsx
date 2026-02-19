@@ -5,15 +5,15 @@ export default function Menu() {
   return (
     <nav className="menu">
       <NavLink to="/" className={({ isActive }) => (isActive ? "link active" : "link")}>
-        Home
+        <span className="material-symbols-outlined">Home</span>
       </NavLink>
 
       <NavLink to="/evento" className={({ isActive }) => (isActive ? "link active" : "link")}>
-        Eventos
+      <span className="material-symbols-outlined">Event</span>
       </NavLink>
 
       <NavLink to="/cadastrar" className={({ isActive }) => (isActive ? "link active" : "link")}>
-        Cadastrar
+      <span className="material-symbols-outlined">calendar_add_on</span>
       </NavLink>
     </nav>
   );
