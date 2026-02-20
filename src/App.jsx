@@ -14,21 +14,21 @@ export default function App() {
   // Estado que armazena a lista de eventos
   const [eventos, setEventos] = useState([
     { 
-      id: 1, 
-      titulo: "Reunião do Projeto", 
-      data: "2026-02-12", 
-      local: "Sala 2", 
-      descricao: "Discussão sobre o andamento do projeto", 
-      editado: false,
+      id: 1, // id do evento
+      titulo: "Reunião do Projeto", // Titulo do evento
+      data: "2026-02-12", // Data do evento
+      local: "Sala 2", // Local do evento
+      descricao: "Discussão sobre o andamento do projeto", // Descrição do evento
+      editado: false, //mostrar se esta editado ou não
       status: "aberto" // Adicionar status
     },
     { 
-      id: 2, 
-      titulo: "Review da Sprint", 
-      data: "2026-02-13", 
-      local: "Auditório", 
-      descricao: "Apresentação dos resultados da sprint", 
-      editado: false,
+      id: 2, // id do evento
+      titulo: "Review da Sprint", // Titulo do evento 
+      data: "2026-02-13", // Titulo do evento
+      local: "Auditório", // Local do evento
+      descricao: "Apresentação dos resultados da sprint", // Descrição do evento 
+      editado: false, //  mostrar se esta editado ou não
       status: "lotado" // Adicionar status
     },
   ]);
@@ -47,7 +47,7 @@ export default function App() {
     setEventos((lista) =>
       lista.map((e) => 
         e.id === eventoEditado.id 
-          ? { ...eventoEditado, editado: true } 
+          ? { ...eventoEditado, editado: true } // coloca os novos dados e marca como editado
           : e
       )
     );
@@ -56,7 +56,7 @@ export default function App() {
   // Função para remover um evento pelo id
   function removerEvento(id) {
     // Filtra a lista removendo o evento com o id correspondente
-    setEventos((lista) => lista.filter((e) => e.id !== id));
+    setEventos((lista) => lista.filter((e) => e.id !== id)); // mantem apenas os eventos que são diferentes do id passado para remover
   }
 
   return (

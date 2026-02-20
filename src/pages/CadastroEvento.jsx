@@ -22,10 +22,10 @@ export default function CadastroEvento({ onAdd, onEdit }) {
       setTitulo(eventoParaEditar.titulo);
       setData(eventoParaEditar.data);
       setLocal(eventoParaEditar.local);
-      setDescricao(eventoParaEditar.descricao || "");
-      setStatus(eventoParaEditar.status || "aberto");
+      setDescricao(eventoParaEditar.descricao || ""); // se descrição existir coloca ela, ou coloca string vazia
+      setStatus(eventoParaEditar.status || "aberto"); // se status existir coloca ele, ou coloca aberto como padrão'
     }
-  }, [eventoParaEditar]);
+  }, [eventoParaEditar]); // só roda quando eventoParaEditar mudar
 
   // Função para limpar o formulário
   function limparFormulario() {
@@ -49,16 +49,16 @@ export default function CadastroEvento({ onAdd, onEdit }) {
     // Cria objeto com os dados do formulário (incluindo status)
     const evento = { titulo, data, local, descricao, status };
 
-    // Se está editando, chama onEdit mantendo o id
+    // se está editando, chama onEdit mantendo o id
     if (eventoParaEditar) {
-      onEdit({ ...evento, id: eventoParaEditar.id });
+      onEdit({ ...evento, id: eventoParaEditar.id }); // mantém o id original para edição
     } else {
-      // Se é novo, chama onAdd
+      // se é novo, chama onAdd
       onAdd(evento);
     }
 
     // Navega de volta para a lista de eventos
-    navigate("/evento");
+    navigate("/evento"); // quando for editado 
   }
 
   return (
@@ -74,9 +74,10 @@ export default function CadastroEvento({ onAdd, onEdit }) {
           <label>
             Título
             <input 
+            type="title"
               value={titulo} 
               onChange={(e) => setTitulo(e.target.value)} 
-              placeholder="Ex: Demo do sistema" 
+              placeholder="Ex: Demo do sistema" // oque fica de sombra na caixa de texto para dar um exemplo do que deve ser preenchido
             />
           </label>
 
@@ -105,8 +106,8 @@ export default function CadastroEvento({ onAdd, onEdit }) {
             Descrição
             <input 
               value={descricao} 
-              onChange={(e) => setDescricao(e.target.value)} 
-              placeholder="Ex: Evento para apresentação do MVP" 
+              onChange={(e) => setDescricao(e.target.value)}  // quando mudar o valor do input, atualiza o estado da descrição
+              placeholder="Ex: Evento para apresentação do MVP"  // oque fica de sombra na caixa de texto para dar um exemplo do que deve ser preenchido
             />
           </label>
 
@@ -149,9 +150,6 @@ export default function CadastroEvento({ onAdd, onEdit }) {
           </div>
         </form>
 
-        <p className="muted">
-          Macete: input controlado = valor vem do state e muda no onChange.
-        </p>
       </div>
     </section>
   );
