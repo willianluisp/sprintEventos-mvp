@@ -1,6 +1,6 @@
-# 📅 Sistema de Eventos
+# 📅 Sprint simples de aula com Sistema de Eventos
 
-Sistema para gerenciar eventos com React.
+Um pequeno sprint educacinal com sistema para gerenciar eventos com React.
 
 ## 🚀 Funcionalidades
 
