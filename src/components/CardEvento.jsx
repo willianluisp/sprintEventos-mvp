@@ -19,6 +19,7 @@ export default function CardEvento({ evento, onRemover }) {
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
           {/* Título do evento */}
           <h3 style={{ margin: 0 }}>{evento.titulo}</h3>
+          <br />
 
           {/* Badge de status - sempre aparece */}
           <span
